@@ -253,3 +253,48 @@ p img {
     margin-left: 5px; /* Add some spacing between the text and the images */
     margin-right: 2px; /* Optional: Add spacing after the image */
 }
+/* Collapsible Section Styling */
+.collapsible {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.collapsible-header {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible-header:hover {
+    background-color: #e2e2e2;
+}
+
+.collapsible-content {
+    display: none; /* Initially hidden */
+    padding: 15px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    animation: slideDown 0.3s ease; /* Optional animation */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
