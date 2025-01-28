@@ -18,47 +18,67 @@
 
     <main>
         <h1 style="text-align: center;">Setup Guide</h1>
-<h2>1. Add the addon</h2>
-<p>Install the addon by adding <a href="https://github.com/mintcreg/pantry_tracker">Pantry Tracker</a> to custom repositories or use the link below and start the addon.</p>
-<p><a href="https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmintcreg%2Fpantry_tracker" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg" alt="Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled." /></a></p>
-<h2>2. Add the custom integration</h2>
-<p>Add the integration <a href="https://github.com/mintcreg/pantry_tracker_sensor">Pantry Tracker Sensor</a>&nbsp;to custom repositories or use the link below.</p>
-<p><a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=mintcreg&amp;repository=pantry_tracker_sensor&amp;category=integration" target="_blank" rel="noreferrer noopener"><img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance and open a repository inside the Home Assistant Community Store." /></a></p>
-<h2>3.&nbsp;Restart HomeAssistant</h2>
-<p>&nbsp;</p>
-<h2>4.&nbsp;Configure the Integration</h2>
-<p>Navigate to Settings &gt; Devices &gt; Add Integration &gt; Pantry Tracker Sensor&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<table style="width: 271.5px;">
-<tbody>
-<tr style="height: 13px;">
-<td style="width: 107px; height: 13px;">Name:</td>
-<td style="width: 167.5px; height: 13px;">Default</td>
-<td style="width: 167.5px; height: 13px;">Usage</td>
-</tr>
-<tr style="height: 13px;">
-<td style="width: 107px; height: 13px;">Update Interval:&nbsp;</td>
-<td style="width: 167.5px; height: 13px;">30</td>
-<td style="width: 167.5px; height: 13px;">Time in seconds to poll for new data</td>
-</tr>
-<tr style="height: 11.5938px;">
-<td style="width: 107px; height: 11.5938px;">Pantry Tracker Host:&nbsp;</td>
-<td style="width: 167.5px; height: 11.5938px;">127.0.0.1</td>
-<td style="width: 167.5px; height: 11.5938px;">IP of host where Pantry Tracker is running</td>
-</tr>
-<tr style="height: 13px;">
-<td style="width: 107px; height: 13px;">Pantry Tracker Port:</td>
-<td style="width: 167.5px; height: 13px;">8099</td>
-<td style="width: 167.5px; height: 13px;">Port the Pantry Tracker is running on</td>
-</tr>
-<tr style="height: 13px;">
-<td style="width: 107px; height: 13px;">API Key:&nbsp;</td>
-<td style="width: 167.5px; height: 13px;">N/A</td>
-<td style="width: 167.5px; height: 13px;">Enter the API Key obtained from Pantry Tracker</td>
-</tr>
-</tbody>
-</table>
+
+        <section>
+            <h3>1. Add the Addon</h3>
+            <p>Install the addon by adding <a href="https://github.com/mintcreg/pantry_tracker">Pantry Tracker</a> to custom repositories or use the link below and start the addon.</p>
+            <p>
+                <a href="https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmintcreg%2Fpantry_tracker" target="_blank" rel="noreferrer noopener">
+                    <img src="https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg" alt="Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled." />
+                </a>
+            </p>
+        </section>
+
+        <section>
+            <h3>2. Add the Custom Integration</h3>
+            <p>Add the integration <a href="https://github.com/mintcreg/pantry_tracker_sensor">Pantry Tracker Sensor</a> to custom repositories or use the link below.</p>
+            <p>
+                <a href="https://my.home-assistant.io/redirect/hacs_repository/?owner=mintcreg&amp;repository=pantry_tracker_sensor&amp;category=integration" target="_blank" rel="noreferrer noopener">
+                    <img src="https://my.home-assistant.io/badges/hacs_repository.svg" alt="Open your Home Assistant instance and open a repository inside the Home Assistant Community Store." />
+                </a>
+            </p>
+        </section>
+
+        <section>
+            <h3>3. Restart Home Assistant</h3>
+            <p>After adding the addon and custom integration, restart your Home Assistant instance to apply changes.</p>
+        </section>
+
+        <section>
+            <h3>4. Configure the Integration</h3>
+            <p>Navigate to <strong>Settings &gt; Devices &gt; Add Integration &gt; Pantry Tracker Sensor</strong> and configure the settings as follows:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Default</th>
+                        <th>Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Update Interval</td>
+                        <td>30</td>
+                        <td>Time in seconds to poll for new data</td>
+                    </tr>
+                    <tr>
+                        <td>Pantry Tracker Host</td>
+                        <td>127.0.0.1</td>
+                        <td>IP of host where Pantry Tracker is running</td>
+                    </tr>
+                    <tr>
+                        <td>Pantry Tracker Port</td>
+                        <td>8099</td>
+                        <td>Port the Pantry Tracker is running on</td>
+                    </tr>
+                    <tr>
+                        <td>API Key</td>
+                        <td>N/A</td>
+                        <td>Enter the API Key obtained from Pantry Tracker</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <footer>
