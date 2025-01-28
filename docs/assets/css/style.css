@@ -83,7 +83,7 @@ footer {
 
 .features h2 {
     color: #333;
-    border-bottom: 2px solid #ff6347;
+    border-bottom: 2px solid #6adb14;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -100,7 +100,7 @@ footer {
 
 .features ul li::before {
     content: '\2022';
-    color: #ff6347;
+    color: #6adb14;
     font-weight: bold;
     display: inline-block;
     width: 1em;
