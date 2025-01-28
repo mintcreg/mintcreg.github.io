@@ -229,7 +229,6 @@ table caption {
 a {
     color: #007bff; 
     text-decoration: none; /* Remove underline by default */
-    font-weight: bold; /* Make links bold */
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
 }
 
