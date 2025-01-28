@@ -62,7 +62,7 @@
             </div>
     <button class="collapsible-header">Display in lovelace</button>
     <div class="collapsible-content" style="display: none;">
-        <p>This will allow you to display the entities using <a href="#">Auto Entities Card</a></p>
+        <p>This will allow you to display the entities using <a href="https://github.com/thomasloven/lovelace-auto-entities">Auto Entities Card</a></p>
 <div class="code-container">
         <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
         <pre><code class="language-yaml">
@@ -115,54 +115,15 @@ filter:
 
 <br>
 
- <button class="collapsible-header">Display in lovelace</button>
+ <button class="collapsible-header">Pantry Tracker Card</button>
     <div class="collapsible-content" style="display: none;">
-        <p>This will allow you to display the entities using <a href="#">Auto Entities Card</a></p>
+       <p>This will allow you to display the entities using the <a href="https://github.com/mintcreg/pantry_tracker_card">Pantry Tracker Card</a></p>
 <div class="code-container">
         <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
         <pre><code class="language-yaml">
-type: custom:auto-entities
-card:
-  type: entities
-  title: Pantry Products
-  show_header_toggle: false
-  state_color: true
-filter:
-  include:
-    - entity_id: sensor.product_*
-      options:
-        type: custom:template-entity-row
-        name: |
-          {{ state_attr(config.entity, 'product_name') }}
-        tap_action:
-          action: fire-dom-event
-          browser_mod:
-            service: browser_mod.popup
-            data:
-              title: Update Stock
-              content:
-                type: vertical-stack
-                cards:
-                  - type: custom:mushroom-template-card
-                    entity: this.entity_id
-                    primary: |
-                      Product: {{ state_attr(entity, 'product_name') }}
-                    secondary: |
-                      Stock Count: {{ states(entity) }}
-                    icon: mdi:food-apple
-                    layout: vertical
-              right_button: Add 1 Item
-              left_button: Remove 1 Item
-              right_button_action:
-                service: pantry_tracker.increase_count
-                data:
-                  entity_id: this.entity_id
-                  amount: 1
-              left_button_action:
-                service: pantry_tracker.decrease_count
-                data:
-                  entity_id: this.entity_id
-                  amount: 1
+type: custom:pantry-card
+entity_prefix: sensor.product_
+search: true
 
         </code></pre>
     </div>
