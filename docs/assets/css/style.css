@@ -219,4 +219,32 @@ a:hover {
     color: #0056b3; /* Darker blue for hover state */
     text-decoration: underline; /* Add underline on hover */
 }
+/* Headers sections */
+.headers {
+    margin-top: 20px;
+}
 
+.headers h1 {
+    color: #333;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.headers ul {
+    padding-left: 20px;
+}
+
+.headers ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.headers ul li::before {
+    content: '\2022';
+    color: #ff6347;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
