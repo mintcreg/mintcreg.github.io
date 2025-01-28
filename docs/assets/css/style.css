@@ -254,13 +254,15 @@ p img {
     margin-right: 2px; /* Optional: Add spacing after the image */
 }
 
+
+
 /* Collapsible Box Styling */
 .collapsible-box {
     margin: 20px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px; /* Add rounded corners to the entire box */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden; /* Ensures content stays within rounded corners */
     cursor: pointer; /* Make the box look clickable */
 }
 
@@ -269,8 +271,11 @@ p img {
     padding: 15px;
     font-weight: bold;
     color: #333;
-    width: 100%;
+    border-radius: 10px; /* Fully round all corners of the header */
     transition: background-color 0.3s ease;
+    width: 100%; /* Ensure header spans full width */
+    box-sizing: border-box; /* Include padding and borders in the total width */
+    border: none; /* Remove conflicting borders that might square corners */
 }
 
 .collapsible-header:hover {
@@ -281,9 +286,10 @@ p img {
     display: none; /* Initially hidden */
     padding: 15px;
     background-color: #f9f9f9; /* Light background for content */
-    border-top: 1px solid #ddd; /* Border to separate from header */
-    border-left: 3px solid #007bff; /* Blue border for visual distinction */
-    border-right: 3px solid #007bff; /* Matching left and right borders */
+    border: none; /* Match the border color */
+    border-top: none; /* Avoid a double border between header and content */
+    border-bottom-left-radius: 10px; /* Rounded corners for the bottom-left */
+    border-bottom-right-radius: 10px; /* Rounded corners for the bottom-right */
     animation: slideDown 0.3s ease; /* Optional animation */
 }
 
