@@ -326,6 +326,30 @@ p img {
         transform: translateY(0);
     }
 }
+#uniform-box {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem 0;
+    padding-bottom: 1px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
 
+#uniform-box label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+#uniform-box input[type="text"] {
+    width: 300px;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+uniform-box a {
+    margin-bottom: 20px;
+}
 
 
