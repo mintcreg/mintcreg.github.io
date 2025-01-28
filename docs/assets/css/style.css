@@ -83,7 +83,7 @@ footer {
 
 .features h2 {
     color: #333;
-    border-bottom: 2px solid #ba07f5;
+    border-bottom: 2px solid #ff6347;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -100,7 +100,7 @@ footer {
 
 .features ul li::before {
     content: '\2022';
-    color: #ba07f5;
+    color: #ff6347;
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -209,9 +209,9 @@ table caption {
     background-color: #0056b3;
 }
 a {
-    color: #0d76bb; 
+    color: #007bff; 
     text-decoration: none; /* Remove underline by default */
-    font-weight: none; /* Make links bold */
+    font-weight: bold; /* Make links bold */
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
 }
 
@@ -224,7 +224,7 @@ a:hover {
     margin-top: 20px;
 }
 
-.headers h1 {
+.headers h2 {
     color: #333;
     border-bottom: 2px solid #ff6347;
     padding-bottom: 5px;
@@ -253,25 +253,23 @@ p img {
     margin-left: 5px; /* Add some spacing between the text and the images */
     margin-right: 2px; /* Optional: Add spacing after the image */
 }
-/* Collapsible Section Styling */
-.collapsible {
+
+/* Collapsible Box Styling */
+.collapsible-box {
     margin: 20px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    cursor: pointer; /* Make the box look clickable */
 }
 
 .collapsible-header {
     background-color: #f4f4f4;
-    color: #333;
-    font-weight: bold;
     padding: 15px;
+    font-weight: bold;
+    color: #333;
     width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
@@ -282,8 +280,10 @@ p img {
 .collapsible-content {
     display: none; /* Initially hidden */
     padding: 15px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
+    background-color: #f9f9f9; /* Light background for content */
+    border-top: 1px solid #ddd; /* Border to separate from header */
+    border-left: 3px solid #007bff; /* Blue border for visual distinction */
+    border-right: 3px solid #007bff; /* Matching left and right borders */
     animation: slideDown 0.3s ease; /* Optional animation */
 }
 
@@ -297,4 +297,3 @@ p img {
         transform: translateY(0);
     }
 }
-
