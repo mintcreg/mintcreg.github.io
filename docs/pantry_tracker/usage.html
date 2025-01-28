@@ -5,6 +5,19 @@
     <title>Home Assistant Pantry Tracker - Usage</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script>
+    function copyCode(button) {
+        const code = button.nextElementSibling.innerText; // Get the code text
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => (button.textContent = "Copy"), 2000);
+        });
+    }
+</script>
+
 </head>
 <body>
 <body>
@@ -37,6 +50,20 @@
         <h2>Running Tests</h2>
         <p>To run the test suite, execute:</p>
         <pre><code>php artisan test</code></pre>
+
+        <div class="code-container">
+    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    <pre><code class="language-yaml">
+    key1: value1
+    key2:
+      - item1
+      - item2
+    key3: |
+      This is a multi-line
+      string in YAML
+    </code></pre>
+</div>
+
     </main>
 
         <footer>
