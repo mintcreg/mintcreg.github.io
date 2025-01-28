@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <title>Home Assistant Pantry Tracker - Usage</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -7,45 +9,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
     <script>
-    function copyCode(button) {
-        const code = button.nextElementSibling.innerText; // Get the code text
-        navigator.clipboard.writeText(code).then(() => {
-            button.textContent = "Copied!";
-            setTimeout(() => (button.textContent = "Copy"), 2000);
-        });
-    }
-</script>
+        function copyCode(button) {
+            const code = button.nextElementSibling.innerText; // Get the code text
+            navigator.clipboard.writeText(code).then(() => {
+                button.textContent = "Copied!";
+                setTimeout(() => (button.textContent = "Copy"), 2000);
+            });
+        }
+    </script>
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const headers = document.querySelectorAll('.collapsible-header');
-        headers.forEach(header => {
-            header.addEventListener('click', function () {
-                // Find the associated collapsible content
-                const content = this.nextElementSibling;
-
-                // Check if this section is already open
-                const isOpen = content.style.display === 'block';
-
-                // Close all collapsible sections before opening the clicked one
-                document.querySelectorAll('.collapsible-content').forEach(panel => {
-                    panel.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function () {
+            const headers = document.querySelectorAll('.collapsible-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function () {
+                    // Find the associated collapsible content
+                    const content = this.nextElementSibling;
+    
+                    // Check if this section is already open
+                    const isOpen = content.style.display === 'block';
+    
+                    // Close all collapsible sections before opening the clicked one
+                    document.querySelectorAll('.collapsible-content').forEach(panel => {
+                        panel.style.display = 'none';
+                    });
+    
+                    // Toggle the clicked one only if it wasn't already open
+                    if (!isOpen) {
+                        content.style.display = 'block';
+                    }
                 });
-
-                // Toggle the clicked one only if it wasn't already open
-                if (!isOpen) {
-                    content.style.display = 'block';
-                }
             });
         });
-    });
-</script>
-
-
-
+    </script>
 
 </head>
-<body>
 
+<body>
 
     <nav>
         <ul>
@@ -58,14 +57,14 @@
 
     <main>
         <div class="headers">
-                <h1 style="text-align: center;">Usage Guide</h1>
-            </div>
-    <button class="collapsible-header">Display in lovelace</button>
-    <div class="collapsible-content" style="display: none;">
-        <p>This will allow you to display the entities using <a href="https://github.com/thomasloven/lovelace-auto-entities">Auto Entities Card</a></p>
-<div class="code-container">
-        <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
-        <pre><code class="language-yaml">
+            <h1 style="text-align: center;">Usage Guide</h1>
+        </div>
+        <button class="collapsible-header">Display in lovelace</button>
+        <div class="collapsible-content" style="display: none;">
+            <p>This will allow you to display the entities using <a href="https://github.com/thomasloven/lovelace-auto-entities">Auto Entities Card</a></p>
+            <div class="code-container">
+                <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
+                <pre><code class="language-yaml">
 type: custom:auto-entities
 card:
   type: entities
@@ -109,28 +108,85 @@ filter:
                   entity_id: this.entity_id
                   amount: 1
         </code></pre>
-    </div>
-    </div>
+            </div>
+        </div>
 
-<br>
+        <br>
 
- <button class="collapsible-header">Pantry Tracker Card</button>
-    <div class="collapsible-content" style="display: none;">
-       <p>This will allow you to display the entities using the <a href="https://github.com/mintcreg/pantry_tracker_card">Pantry Tracker Card</a></p>
-<div class="code-container">
-        <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
-        <pre><code class="language-yaml">type: custom:pantry-card
+        <button class="collapsible-header">Pantry Tracker Card</button>
+        <div class="collapsible-content" style="display: none;">
+            <p>This will allow you to display the entities using the <a href="https://github.com/mintcreg/pantry_tracker_card">Pantry Tracker Card</a></p>
+            <div class="code-container">
+                <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
+                <pre><code class="language-yaml">type: custom:pantry-card
 entity_prefix: sensor.product_
 search: true
         </code></pre>
-    </div>
-    </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Required</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>entity_prefix</strong></td>
+                        <td>The prefix for your pantry product entities (e.g., sensor.product_).</td>
+                        <td>string</td>
+                        <td>N/A</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>search</strong></td>
+                        <td>Adds a search bar to filter products dynamically.</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>category_filter</strong></td>
+                        <td>Enables a dropdown to filter products by category.</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>filter_categories</strong></td>
+                        <td>An array of categories to exclude from the card.</td>
+                        <td>list(string)</td>
+                        <td>[]</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>show_images</strong></td>
+                        <td>Toggles whether to display product images in the card.</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td><strong>empty_state_text</strong></td>
+                        <td>Custom text/HTML to display when no products are available.</td>
+                        <td>string/html</td>
+                        <td>N/A</td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
 
     </main>
 
-        <footer>
+    <footer>
         © Mintcreg
     </footer>
 
+</body>
 
-</body></html>
+</html>
