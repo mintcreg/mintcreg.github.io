@@ -58,48 +58,79 @@ footer {
     color: #777;
     font-size: 0.9em;
 }
+
 /* Enhanced styles */
 
-        /* Centered logo and badges */
-        .centered-content {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+/* Centered logo and badges */
+.centered-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        /* Feature sections */
-        .features {
-            margin-top: 20px;
-        }
+/* Feature sections */
+.features {
+    margin-top: 20px;
+}
 
-        .features h2 {
-            color: #333;
-            border-bottom: 2px solid #ff6347;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
+.features h2 {
+    color: #333;
+    border-bottom: 2px solid #ff6347;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
 
-        .features ul {
-            padding-left: 20px;
-        }
+.features ul {
+    padding-left: 20px;
+}
 
-        .features ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: #555;
-        }
+.features ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
 
-        .features ul li::before {
-            content: '\2022';
-            color: #ff6347;
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-        }
+.features ul li::before {
+    content: '\2022';
+    color: #ff6347;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
 
-        /* Footer adjustments */
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: #777;
-            font-size: 0.9em;
-        }
+/* Installation section */
+.installation {
+    margin-top: 20px;
+}
+
+.installation h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff; /* Blue underline for installation */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.installation ul {
+    padding-left: 20px;
+}
+
+.installation ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.installation ul li::before {
+    content: '\2022';
+    color: #007bff; /* Blue bullet points for installation */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+}
+
+/* Footer adjustments */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+    font-size: 0.9em;
+}
