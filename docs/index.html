@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,41 +17,48 @@
             <li><a href="/pantry_tracker/faq.html">FAQ</a></li>
         </ul>
     </nav>
-    <div class="centered-content">
-        <h1>Home Assistant Pantry Tracker</h1>
-        <p><img src="https://img.shields.io/github/v/release/mintcreg/pantry_tracker?&amp;cacheBust=true" alt="Release" /> <img src="https://img.shields.io/maintenance/yes/2025" alt="Maintenance" /></p>
-        <p><img src="https://raw.githubusercontent.com/mintcreg/pantry_tracker/refs/heads/main/images/logo.webp" alt="Alt Text" width="400" height="400" /></p>
-    </div>
-    <div class="features">
-        <h2>Features</h2>
-        <ul>
-            <li>🖥️ Responsive User Interface A sleek, easy-to-navigate interface that adapts to different screen sizes.</li>
-            <li>📦 Product Management: Add, update, or remove products from your inventory and track counts automatically.</li>
-            <li>🗂️ Category Management: Create, edit, or delete custom categories for better organization.</li>
-            <li>🔄 Real-Time Updates: Reflect changes instantly via the API or interface.</li>
-            <li>💾 Backup &amp; Restore: Save a copy of the database or restore it as needed.</li>
-        </ul>
-    </div>
-    <div class="installation">
-        <h2>Installation Requirements</h2>
-        <ul>
+
+    <main>
+        <div class="centered-content">
+            <h1>Home Assistant Pantry Tracker</h1>
+            <p>
+                <img alt="Release" src="https://img.shields.io/github/v/release/mintcreg/pantry_tracker?&amp;cacheBust=true">
+                <img alt="Maintenance" src="https://img.shields.io/maintenance/yes/2025">
+            </p>
+
+            <p>
+                <img src="https://raw.githubusercontent.com/mintcreg/pantry_tracker/refs/heads/main/images/logo.webp" alt="Alt Text" width="400" height="400">
+            </p>
+        </div>
+
+        <div class="features">
+            <h2>Features</h2>
             <ul>
-                <li>Pantry Tracker Addon<strong>*</strong> - This is the server only</li>
+                <li>🖥️ Responsive User Interface: A sleek, easy-to-navigate interface that adapts to different screen sizes.</li>
+                <li>📦 Product Management: Add, update, or remove products from your inventory and track counts automatically.</li>
+                <li>🗂️ Category Management: Create, edit, or delete custom categories for better organization.</li>
+                <li>🔄 Real-Time Updates: Reflect changes instantly via the API or interface.</li>
+                <li>💾 Backup &amp; Restore: Save a copy of the database or restore it as needed.</li>
             </ul>
-        </ul>
-        <ul>
+        </div>
+
+        <div class="installation">
+            <h2>Installation Requirements</h2>
             <ul>
-                <li>Pantry Tracker Sensor<strong>*</strong> - This allows the data from the addon to be imported to HomeAssistant</li>
+                <li><a href="#">Pantry Tracker Addon</a><strong>*</strong> - This is the server only</li>
+                <li><a href="#">Pantry Tracker Sensor</a>
+                    <strong>*</strong> - This allows the data from the addon to be imported to HomeAssistant</li>
+                <li><a href="#">Pantry Tracker Card</a> (Optional) - This is still in very early stages but allows you to automatically display products within Lovelace</li>
             </ul>
-        </ul>
-        <ul>
-            <ul>
-                <li>Pantry Tracker Card (Optional) - This is still in very early stages but allows you to automatically display products within lovelace&nbsp;</li>
-            </ul>
-        </ul>
-        <h4><br />Please visit <a href="/pantry_tracker/install.html">installation page</a> for further setup with <a href="https://github.com/mintcreg/pantry_tracker_sensor">Pantry Tracker Sensor</a> (to import the data into Home Assistant)</h4>
-    </div>
-    <footer>&copy; Mintcreg</footer>
+            <h4>
+                <br>Please visit <a href="/pantry_tracker/install.html">installation page</a> for further setup with <a href="https://github.com/mintcreg/pantry_tracker_sensor">Pantry Tracker Sensor</a> (to import the data into Home Assistant)
+            </h4>
+        </div>
+    </main>
+
+    <footer>
+        © Mintcreg
+    </footer>
 
 </body>
 
