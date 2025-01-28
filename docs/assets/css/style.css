@@ -61,12 +61,31 @@ main p {
     margin-bottom: 20px; /* Add spacing below paragraphs */
 }
 
-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-    font-size: 0.9em;
+.footer {
+    display: flex; 
+    align-items: center; /* Vertically center icon and text */
+    justify-content: center; /* Horizontally center footer */
+    gap: 5px; /* Space between icon and text */
+    text-align: center; /* Ensures text alignment */
+    padding: 10px 0; /* Add some vertical padding */
 }
+
+.footer-icon {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
+    vertical-align: middle;
+}
+
+.footer-link {
+    font-weight: bold;
+    color: #a3a9ae;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
 
 /* Enhanced styles */
 
