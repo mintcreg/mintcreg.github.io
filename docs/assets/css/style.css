@@ -83,7 +83,7 @@ footer {
 
 .features h2 {
     color: #333;
-    border-bottom: 2px solid #ff6347;
+    border-bottom: 2px solid #ba07f5;
     padding-bottom: 5px;
     margin-bottom: 15px;
 }
@@ -100,7 +100,7 @@ footer {
 
 .features ul li::before {
     content: '\2022';
-    color: #ff6347;
+    color: #ba07f5;
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -209,9 +209,9 @@ table caption {
     background-color: #0056b3;
 }
 a {
-    color: #007bff; 
+    color: #0d76bb; 
     text-decoration: none; /* Remove underline by default */
-    font-weight: bold; /* Make links bold */
+    font-weight: none; /* Make links bold */
     transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
 }
 
