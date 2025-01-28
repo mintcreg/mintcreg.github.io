@@ -9,7 +9,7 @@
 
 <body>
 
-<div id="header-placeholder"></div>
+    <div id="header-placeholder"></div>
 
     <main>
         <div class="centered-content">
@@ -56,52 +56,50 @@
         </div>
     </main>
 
-   <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-</footer>
-
-<script>
-    // Function to load the header
-    function loadHeader() {
-      fetch('../../assets/templates/header.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-          console.error('There was a problem loading the header:', error);
-        });
-    }
-
-    // Call the function after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', loadHeader);
-  </script>
     <script>
-    // Function to load the footer
-    function loadfooter() {
-      fetch('../../assets/templates/footer.html')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.text();
-        })
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => {
-          console.error('There was a problem loading the footer:', error);
-        });
-    }
-
-    // Call the function after the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', loadfooter);
-  </script>
+        // Function to load the header
+        function loadHeader() {
+          fetch('../../assets/templates/header.html')
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(data => {
+              document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+              console.error('There was a problem loading the header:', error);
+            });
+        }
+    
+        // Call the function after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', loadHeader);
+    </script>
+    <script>
+        // Function to load the footer
+        function loadfooter() {
+          fetch('../../assets/templates/footer.html')
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(data => {
+              document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+              console.error('There was a problem loading the footer:', error);
+            });
+        }
+    
+        // Call the function after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', loadfooter);
+    </script>
 </body>
 
 </html>
