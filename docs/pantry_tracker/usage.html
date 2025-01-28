@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <title>Home Assistant Pantry Tracker - Usage</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -22,15 +20,19 @@
         const headers = document.querySelectorAll('.collapsible-header');
         headers.forEach(header => {
             header.addEventListener('click', function () {
-                // Toggle the active state of the header
-                this.classList.toggle('active');
-
-                // Find the content panel
+                // Find the associated collapsible content
                 const content = this.nextElementSibling;
 
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                } else {
+                // Check if this section is already open
+                const isOpen = content.style.display === 'block';
+
+                // Close all collapsible sections before opening the clicked one
+                document.querySelectorAll('.collapsible-content').forEach(panel => {
+                    panel.style.display = 'none';
+                });
+
+                // Toggle the clicked one only if it wasn't already open
+                if (!isOpen) {
                     content.style.display = 'block';
                 }
             });
@@ -39,9 +41,11 @@
 </script>
 
 
+
+
 </head>
 <body>
-<body>
+
 
     <nav>
         <ul>
@@ -55,57 +59,120 @@
     <main>
         <div class="headers">
                 <h1 style="text-align: center;">Usage Guide</h1>
-            </div
-
-
-                <div class="collapsible">
-    <button class="collapsible-header">Click to Expand</button>
-    <div class="collapsible-content">
-        <p>This is the hidden content that will be revealed when the section is expanded. You can add any HTML content here.</p>
-        <ul>
-            <li>Point 1</li>
-            <li>Point 2</li>
-            <li>Point 3</li>
-        </ul>
-    </div>
-</div>
-
-
-        <h2>Starting the Server</h2>
-        <p>To start the development server, run:</p>
-        <pre><code>php artisan serve</code></pre>
-        <p>This will start the server at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
-
-        <h2>Accessing Features</h2>
-        <p>Once the server is running, you can access the following features:</p>
-        <ul>
-            <li><strong>Dashboard:</strong> Overview of application metrics.</li>
-            <li><strong>User Management:</strong> Add, edit, or remove users.</li>
-            <li><strong>Settings:</strong> Configure application settings.</li>
-        </ul>
-
-        <h2>Running Tests</h2>
-        <p>To run the test suite, execute:</p>
-        <pre><code>php artisan test</code></pre>
-
-        <div class="code-container">
+            </div>
+    <button class="collapsible-header">Display in lovelace</button>
+    <div class="collapsible-content" style="display: none;">
+        <p>This will allow you to display the entities using <a href="#">Auto Entities Card</a></p>
+<div class="code-container">
         <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
         <pre><code class="language-yaml">
-        key1: value1
-        key2:
-          - item1
-          - item2
-        key3: |
-          This is a multi-line
-          string in YAML
+type: custom:auto-entities
+card:
+  type: entities
+  title: Pantry Products
+  show_header_toggle: false
+  state_color: true
+filter:
+  include:
+    - entity_id: sensor.product_*
+      options:
+        type: custom:template-entity-row
+        name: |
+          {{ state_attr(config.entity, 'product_name') }}
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              title: Update Stock
+              content:
+                type: vertical-stack
+                cards:
+                  - type: custom:mushroom-template-card
+                    entity: this.entity_id
+                    primary: |
+                      Product: {{ state_attr(entity, 'product_name') }}
+                    secondary: |
+                      Stock Count: {{ states(entity) }}
+                    icon: mdi:food-apple
+                    layout: vertical
+              right_button: Add 1 Item
+              left_button: Remove 1 Item
+              right_button_action:
+                service: pantry_tracker.increase_count
+                data:
+                  entity_id: this.entity_id
+                  amount: 1
+              left_button_action:
+                service: pantry_tracker.decrease_count
+                data:
+                  entity_id: this.entity_id
+                  amount: 1
+
         </code></pre>
+    </div>
+    </div>
+
+<br>
+
+ <button class="collapsible-header">Display in lovelace</button>
+    <div class="collapsible-content" style="display: none;">
+        <p>This will allow you to display the entities using <a href="#">Auto Entities Card</a></p>
+<div class="code-container">
+        <button class="copy-btn" aria-label="Copy code to clipboard" onclick="copyCode(this)">Copy</button>
+        <pre><code class="language-yaml">
+type: custom:auto-entities
+card:
+  type: entities
+  title: Pantry Products
+  show_header_toggle: false
+  state_color: true
+filter:
+  include:
+    - entity_id: sensor.product_*
+      options:
+        type: custom:template-entity-row
+        name: |
+          {{ state_attr(config.entity, 'product_name') }}
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            service: browser_mod.popup
+            data:
+              title: Update Stock
+              content:
+                type: vertical-stack
+                cards:
+                  - type: custom:mushroom-template-card
+                    entity: this.entity_id
+                    primary: |
+                      Product: {{ state_attr(entity, 'product_name') }}
+                    secondary: |
+                      Stock Count: {{ states(entity) }}
+                    icon: mdi:food-apple
+                    layout: vertical
+              right_button: Add 1 Item
+              left_button: Remove 1 Item
+              right_button_action:
+                service: pantry_tracker.increase_count
+                data:
+                  entity_id: this.entity_id
+                  amount: 1
+              left_button_action:
+                service: pantry_tracker.decrease_count
+                data:
+                  entity_id: this.entity_id
+                  amount: 1
+
+        </code></pre>
+    </div>
     </div>
 
     </main>
 
         <footer>
-        &copy; Mintcreg
+        © Mintcreg
     </footer>
 
-</body>
-</html>
+
+</body></html>
