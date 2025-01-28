@@ -1,0 +1,60 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    background-color: #f9f9f9;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Tomato color on hover */
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9em;
+}
