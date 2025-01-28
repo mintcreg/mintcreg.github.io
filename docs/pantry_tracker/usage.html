@@ -46,14 +46,7 @@
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="setup.html">Setup</a></li>
-            <li><a href="usage.html">Usage</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
+    <div id="header-placeholder"></div>
 
     <main>
         <div class="headers">
@@ -109,7 +102,7 @@ filter:
                   amount: 1
         </code></pre>
             </div>
-             <h4>Screenshots</h4>
+            <h4>Screenshots</h4>
             <a href="../../assets/images/auto-entities-card.PNG" target="_blank">
                 <img src="../../assets/images/auto-entities-card.PNG" alt="Pantry Tracker Card" width="75%" height="70%">
             </a>
@@ -195,14 +188,50 @@ search: true
 
     </main>
 
-    <footer class="footer">
-        <svg xmlns="http://www.w3.org/2000/svg" class="footer-icon" width="18" height="18" viewBox="0 0 16 16" fill="none">
-  <path fill="#181717" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.2 1.87.85 2.33.65.07-.52.28-.85.51-1.05-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.47 0 1.06-.01 1.91-.01 2.17 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-</svg>
-        <a href="https://github.com/mintcreg" class="footer-link">mintcreg</a>
+    <div id="footer-placeholder"></div>
 
-    </footer>
-
+    <script>
+        // Function to load the header
+        function loadHeader() {
+          fetch('../../assets/templates/header.html')
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(data => {
+              document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+              console.error('There was a problem loading the header:', error);
+            });
+        }
+    
+        // Call the function after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', loadHeader);
+    </script>
+    <script>
+        // Function to load the footer
+        function loadfooter() {
+          fetch('../../assets/templates/footer.html')
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.text();
+            })
+            .then(data => {
+              document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+              console.error('There was a problem loading the footer:', error);
+            });
+        }
+    
+        // Call the function after the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', loadfooter);
+    </script>
 </body>
 
 </html>
