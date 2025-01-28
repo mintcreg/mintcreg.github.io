@@ -64,6 +64,27 @@
 
 </footer>
 
+<script>
+    // Function to load the header
+    function loadHeader() {
+      fetch('header.html')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(error => {
+          console.error('There was a problem loading the header:', error);
+        });
+    }
+
+    // Call the function after the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', loadHeader);
+  </script>
 </body>
 
 </html>
