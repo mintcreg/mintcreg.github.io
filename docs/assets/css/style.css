@@ -208,3 +208,15 @@ table caption {
 .code-container button:hover {
     background-color: #0056b3;
 }
+a {
+    color: #007bff; 
+    text-decoration: none; /* Remove underline by default */
+    font-weight: bold; /* Make links bold */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue for hover state */
+    text-decoration: underline; /* Add underline on hover */
+}
+
