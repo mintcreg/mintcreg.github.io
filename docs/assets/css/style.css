@@ -248,3 +248,8 @@ a:hover {
     display: inline-block;
     width: 1em;
 }
+p img {
+    vertical-align: middle; /* Align the images to the middle of the text */
+    margin-left: 5px; /* Add some spacing between the text and the images */
+    margin-right: 2px; /* Optional: Add spacing after the image */
+}
